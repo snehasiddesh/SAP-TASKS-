@@ -1,0 +1,24 @@
+REPORT ZSNE_STRUCTURE.
+
+TYPES: BEGIN OF ty_makt,
+
+  matnr TYPE makt-matnr,
+  spras TYPE makt-spras,
+  maktx TYPE makt-maktx,
+  maktg TYPE makt-maktg,
+  END OF ty_makt.
+
+
+
+  DATA st_makt TYPE ty_makt.
+
+st_makt-matnr = '23'.
+st_makt-spras = 'ENGLISH'.
+st_makt-maktx = 'sneha'.
+st_makt-maktg = 'name'.
+
+
+write st_makt-matnr.
+write st_makt-spras.
+write st_makt-maktx.
+write st_makt-maktg.

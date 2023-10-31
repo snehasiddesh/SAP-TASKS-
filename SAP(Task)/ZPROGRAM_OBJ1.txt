@@ -1,0 +1,15 @@
+REPORT ZPROGRAM_OBJ1.
+DATA : v_date TYPE d,
+      v_out TYPE c LENGTH 10.
+
+v_date = '20231010'.
+WRITE v_date TO v_out.
+WRITE v_out.
+
+DATA v1 type zty_namec.
+v1 = 'jskwjdkefjejf'.
+write / v1.
+
+DATA v2 type zty_test.
+v2 = 'sneha00'.
+write / v2.

@@ -1,0 +1,41 @@
+REPORT ZSNE_PLANT0.
+
+
+PARAMETERS p_vblen TYPE vbak-vbeln.
+
+TYPES : BEGIN OF ty_vbak,
+        vbeln TYPE vbak-vbeln,
+        audat TYPE vbak-vbeln,
+  netwr TYPE vbak-netwr,
+  kunnr TYPE vbak-kunnr,
+  END OF ty_vbak.
+
+
+
+  TYPES : BEGIN OF ty_vbap,
+          posnr TYPE vbap-posnr,
+          matnr TYPE vbap-matnr,
+          arktx TYPE vbap-arktx,
+          kwmeng TYPE vbap-kwmeng,
+          zieme TYPE vbap-zieme,
+          netwr TYPE vbap-netwr,
+     END OF ty_vbap.
+
+
+    TYPES : BEGIN OF ty_t006a,
+            msehi TYPE t006a-msehi,
+            mseh1 TYPE t006a-mseh1,
+      END OF ty_t006a.
+
+      DATA : it_vbak TYPE TABLE OF ty_vbak,
+              wa_vbak LIKE LINE OF it_vbak,
+              it_vbap TYPE TABLE OF ty_vbap,
+              wa_vbap LIKE LINE OF  it_vbap,
+              it_t006a TYPE TABLE OF it_t006a,
+              wa_t006a LIKE LINE OF it_t006a.
+
+
+      DATA v_name1 TYPE knal1-name1.
+      DATA v_mseh1 TYPE t006a-mseh1.
+
+      SELECT SINGLE vbeln audat netwr kunnr FROM  vbak INTO wa_vbak WHERE vbeln EQ p_vbeln.

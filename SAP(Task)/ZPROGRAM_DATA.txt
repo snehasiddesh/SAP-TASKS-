@@ -1,0 +1,14 @@
+REPORT ZPROGRAM_DATA.
+TYPES ty_name TYPE c LENGTH 20.
+DATA : v_name TYPE ty_name,
+       v_f_name TYPE ty_name,
+       v_m_name TYPE ty_name.
+
+WRITE 'name'.
+v_name = 'sneha'.
+v_f_name = 'siddesh'.
+v_m_name = 'ch'.
+
+WRITE v_name.
+WRITE v_f_name.
+WRITE v_m_name.

@@ -1,0 +1,28 @@
+REPORT Z_ASSESMENT.
+PARAMETERS p_kunnr type kunnr.
+DATA it_kna1 type table of kna1.
+DATA wa_kna1 like line of it_kna1.
+CALL FUNCTION 'Z_ASSESMENT'
+  EXPORTING
+    i_kun = p_kunnr
+IMPORTING
+   EX_KNA1 = wa_kna1
+EXCEPTIONS
+   INVALID_CUSTOMER = 1
+   OTHERS= 2
+          .
+IF sy-subrc <> 0.
+* Implement suitable error handling here
+  CASE  sy-subrc.
+    WHEN 1.
+      MESSAGE 'invalid_customer' TYPE 'E'.
+
+
+
+    WHEN OTHERS.
+  ENDCASE.
+
+
+
+ENDIF.
+write : / wa_kna1-kunnr , wa_kna1-name1.

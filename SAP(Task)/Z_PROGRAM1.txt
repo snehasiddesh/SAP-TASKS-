@@ -1,0 +1,21 @@
+REPORT Z_PROGRAM1.
+DATA s_name TYPE c LENGTH 10.
+DATA qty TYPE i.
+qty = '10.35'.
+WRITE 'integer value is'.
+WRITE qty.
+PARAMETERS name TYPE c LENGTH 10.
+WRITE 'my name is'.
+name = 'sneha'.
+WRITE name.
+DATA date type d.
+date = '20000828'.
+WRITE 'date of birth'.
+WRITE date.
+DATA float type f.
+float = '20.30'.
+WRITE float.
+DATA time type t.
+time = '310211'.
+WRITE 'my time is'.
+WRITE time.
